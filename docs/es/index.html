@@ -47,7 +47,7 @@
 
     <section class="hero">
         <div class="container">
-            <div class="hero-badge" id="heroBadge">🎮 VS Code GitHub Copilot Workshop</div>
+            <div class="hero-badge" id="heroBadge">🎮 Taller de GitHub Copilot en VS Code</div>
             <h1>Mona Mayhem Workshop</h1>
             <p class="hero-subtitle" id="heroSubtitle">Construye una arena de batalla de contribuciones GitHub con estilo retro arcade mientras dominas las funciones de VS Code Copilot: ingeniería de contexto, Plan Mode, Agent Mode, desarrollo design-first y flujos de trabajo multi-agent.</p>
             <div class="track-panel">
@@ -194,30 +194,30 @@
         const tracks = {
             vscode: {
                 label: 'VS Code',
-                badge: '🎮 VS Code GitHub Copilot Workshop',
-                subtitle: 'Construye una arena de batalla de contribuciones GitHub con estilo retro arcade mientras dominas las funciones de VS Code Copilot: ingeniería de contexto, Plan Mode, Agent Mode, desarrollo design-first y flujos de trabajo multi-agent.',
-                copy: 'Usa el taller VS Code para practicar Chat, Plan Mode, Agent Mode, agentes en segundo plano y el ciclo de revisión en el editor.',
-                highlights: ['Chat panel', 'Plan Mode', 'Agent Mode', 'Background agents'],
+                badge: '🎮 Taller de GitHub Copilot en VS Code',
+                subtitle: 'Crea una app retro arcade para comparar contribuciones de GitHub mientras aprendes funciones de VS Code Copilot: ingeniería de contexto, Plan Mode, Agent Mode, desarrollo guiado por el diseño y flujos multi-agent.',
+                copy: 'Usa el taller de VS Code para practicar Chat, Plan Mode, Agent Mode, agentes en segundo plano y el ciclo de revisión del editor.',
+                highlights: ['Chat', 'Plan Mode', 'Agent Mode', 'Agentes en segundo plano'],
                 prerequisites: ['VS Code v1.107+', 'GitHub Copilot', 'Node.js 18+', 'Git instalado'],
                 features: [
-                    { icon: '🧠', title: 'Ingeniería de Contexto', copy: 'Enséñale a Copilot sobre tu código con instrucciones de workspace, agentes en segundo plano y exploración con el modo Ask.' },
-                    { icon: '📋', title: 'Plan Mode', copy: 'Diseña la arquitectura antes de codificar — itera en los planes hasta que estén correctos, luego implementa con confianza.' },
-                    { icon: '🤖', title: 'Agent Mode', copy: 'Deja que Copilot cree funcionalidades completas de forma autónoma en múltiples archivos, luego itera con retroalimentación.' },
-                    { icon: '🎨', title: 'Flujos Multi-Agent', copy: 'Usa agentes en segundo plano y en la nube para pulido paralelo — diseño responsivo, UX de errores, variaciones de tema.' }
+                    { icon: '🧠', title: 'Ingeniería de contexto', copy: 'Enséñale a Copilot sobre tu código con instrucciones del espacio de trabajo, agentes en segundo plano y exploración en Ask mode.' },
+                    { icon: '📋', title: 'Plan Mode', copy: 'Diseña la arquitectura antes de escribir código: itera sobre los planes hasta que estén bien y luego implementa con confianza.' },
+                    { icon: '🤖', title: 'Agent Mode', copy: 'Deja que Copilot cree funciones completas de forma autónoma en varios archivos y luego itera con comentarios.' },
+                    { icon: '🎨', title: 'Flujos multi-agent', copy: 'Usa agentes locales y en la nube para pulir en paralelo: diseño adaptable, experiencia de error y variaciones de tema.' }
                 ]
             },
             cli: {
                 label: 'CLI',
-                badge: '💻 GitHub Copilot CLI Workshop',
+                badge: '💻 Taller de GitHub Copilot CLI',
                 subtitle: 'Construye la misma app retro arcade mientras aprendes flujos de trabajo nativos del terminal con Copilot: instrucciones personalizadas, /plan, ediciones autónomas, paralelismo con /fleet, /delegate y /review.',
-                copy: 'Usa el taller CLI para quedarte en la terminal mientras planificas, codificas, revisas y paralelizas trabajo con comandos agentic.',
+                copy: 'Usa el taller de CLI para quedarte en la terminal mientras planificas, codificas, revisas y paralelizas el trabajo con comandos agentic.',
                 highlights: ['copilot', '/plan', '/fleet', '/delegate', '/review'],
-                prerequisites: ['Plan GitHub Copilot con acceso CLI', 'Copilot CLI instalado vía npm (requiere Node.js 22+), Homebrew o WinGet', 'Git instalado', 'Terminal o shell de tu preferencia'],
+                prerequisites: ['GitHub Copilot con acceso CLI', 'Copilot CLI instalado vía npm (requiere Node.js 22+), Homebrew o WinGet', 'Git instalado', 'Terminal o shell de tu elección'],
                 features: [
-                    { icon: '🛠️', title: 'Instrucciones y Permisos Personalizados', copy: 'Inicializa instrucciones del repositorio, ajusta allowlists y dale a Copilot exactamente el contexto y las herramientas que necesita.' },
-                    { icon: '📋', title: 'Plan & Autopilot', copy: 'Usa /plan o Shift+Tab para crear un plan primero, luego deja que Copilot implemente con tu aprobación.' },
-                    { icon: '⚡', title: 'Flujos Paralelos en CLI', copy: 'Usa /fleet para dividir trabajo entre subagentes y mantener el ritmo mientras revisas los diffs.' },
-                    { icon: '🔍', title: 'Delegate & Review', copy: 'Delega trabajo opcional con /delegate y ejecuta /review antes de finalizar el taller.' }
+                    { icon: '🛠️', title: 'Instrucciones y permisos personalizados', copy: 'Inicializa las instrucciones del repositorio, ajusta las listas permitidas y dale a Copilot exactamente el contexto y las herramientas que necesita.' },
+                    { icon: '📋', title: 'Plan y autopilot', copy: 'Usa /plan o Shift+Tab para planear antes y luego deja que Copilot implemente con tu aprobación.' },
+                    { icon: '⚡', title: 'Flujos paralelos en CLI', copy: 'Usa /fleet para dividir el trabajo entre subagentes y mantener el ritmo mientras revisas los cambios.' },
+                    { icon: '🔍', title: 'Delegate y review', copy: 'Delegua trabajo opcional con /delegate y ejecuta /review antes de terminar el taller.' }
                 ]
             }
         };
@@ -236,7 +236,7 @@
             try {
                 return normalizeTrack(localStorage.getItem(TRACK_STORAGE_KEY));
             } catch (error) {
-                console.warn('Unable to read saved workshop track preference.', error);
+                console.warn('No se pudo leer la preferencia guardada del taller.', error);
                 return 'vscode';
             }
         }
@@ -245,7 +245,7 @@
             try {
                 localStorage.setItem(TRACK_STORAGE_KEY, track);
             } catch (error) {
-                console.warn('Unable to persist workshop track preference.', error);
+                console.warn('No se pudo guardar la preferencia del taller.', error);
             }
         }
 
@@ -293,7 +293,7 @@
 
         function updateLinks(track) {
             document.getElementById('startWorkshopBtn').href = buildStepUrl('00-overview', track);
-            document.getElementById('startWorkshopBtn').textContent = `🚀 Iniciar Taller ${tracks[track].label}`;
+            document.getElementById('startWorkshopBtn').textContent = `🚀 Iniciar taller de ${tracks[track].label}`;
             document.querySelectorAll('[data-step]').forEach((link) => {
                 link.href = buildStepUrl(link.dataset.step, track);
             });
